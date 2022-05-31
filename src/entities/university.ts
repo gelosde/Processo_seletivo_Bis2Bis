@@ -20,6 +20,6 @@ export class User {
   @Column()
   domains: string[];
 
-  @Column({ default: null })
+  @Column({ default: null, length: 2 })
   stateProvince: string;
 }
