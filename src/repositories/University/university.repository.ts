@@ -21,6 +21,5 @@ class UniversityRepository {
     Newinfo: IUniversityInterface
   ) => this.ormrepository.updateOne(oldInfo, Newinfo);
 }
-/*    ["brasil",
-    "argentina","chile","colombia","paraguai","peru","suriname"
-   , "uruguay"] */
+
+export default UniversityRepository;
