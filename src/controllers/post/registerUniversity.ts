@@ -27,7 +27,7 @@ const registerUNiversity = async (req: Request, res: Response) => {
     response = await new UniversityRepository().saveInchile(university);
     statusCode = 201;
   } else if (
-    university.country === "colombia" &&
+    university.country === "Colombia" &&
     university.alpha_two_code === "CO"
   ) {
     response = await new UniversityRepository().saveInColombia(university);

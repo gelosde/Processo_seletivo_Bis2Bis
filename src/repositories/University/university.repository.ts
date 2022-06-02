@@ -37,9 +37,6 @@ class UniversityRepository {
 
   getAllInArgentina = async () => this.argentinarepository.find();
 
-  getbyIdArgentina = async (id: string) =>
-    this.argentinarepository.findOne({ id: id });
-
   updateArgentina = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -62,9 +59,6 @@ class UniversityRepository {
 
   getAllInBrasil = async () => this.brasilrepository.find();
 
-  getbyIdbrasil = async (id: string) =>
-    this.brasilrepository.findOne({ id: id });
-
   updatebrasil = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -86,8 +80,6 @@ class UniversityRepository {
 
   getAllInchile = async () => this.chilerepoitory.find();
 
-  getbyIdChile = async (id: string) => this.chilerepoitory.findOne({ id: id });
-
   update = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -108,10 +100,8 @@ class UniversityRepository {
   saveInColombia = async (university: IUniversityInterface) =>
     this.colombiarepository.insertOne(university);
 
-  getAllInColombia = async (collection: string) =>
-    this.colombiarepository.find();
-  getbyIdInColombia = async (id: string) =>
-    this.colombiarepository.findOne({ id: id });
+  getAllInColombia = async () => this.colombiarepository.find();
+
   updateInColombia = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -132,8 +122,7 @@ class UniversityRepository {
   saveInParaguai = async (university: IUniversityInterface) =>
     this.paraguairepository.insertOne(university);
   getAllInParaguai = async () => this.paraguairepository.find();
-  getbyIdInParaguai = async (id: string) =>
-    this.paraguairepository.findOne({ id: id });
+
   updateInParaguai = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -154,7 +143,7 @@ class UniversityRepository {
   saveInPeru = async (university: IUniversityInterface) =>
     this.perurepository.insertOne(university);
   getAllInPeru = async () => this.perurepository.find();
-  getbyIdInPeru = async (id: string) => this.perurepository.findOne({ id: id });
+
   updateInPeru = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -174,8 +163,7 @@ class UniversityRepository {
   saveInSuriname = async (university: IUniversityInterface) =>
     this.surinamirepository.insertOne(university);
   getAllInSuriname = async () => this.surinamirepository.find();
-  getbyIdInSuriname = async (id: string) =>
-    this.surinamirepository.findOne({ id: id });
+
   updateInSuriname = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -196,8 +184,7 @@ class UniversityRepository {
   saveInUruguay = async (university: IUniversityInterface) =>
     this.uruguayrepoitory.insertOne(university);
   getAllInUruguay = async () => this.uruguayrepoitory.find();
-  getbyIdInUruguay = async (id: string) =>
-    this.uruguayrepoitory.findOne({ id: id });
+
   updateInUruguay = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
@@ -212,6 +199,28 @@ class UniversityRepository {
     });
   deleteInUruguay = async (id: string) =>
     this.uruguayrepoitory.delete({ id: id });
+
+  getAll = async () => {
+    const argentiFinder = await this.argentinarepository.find();
+    const brasilFinder = await this.brasilrepository.find();
+    const chileFinder = await this.chilerepoitory.find();
+    const colombiaFinder = await this.colombiarepository.find();
+    const paraguaiFinder = await this.paraguairepository.find();
+    const peruFinder = await this.perurepository.find();
+    const surinameFinder = await this.surinamirepository.find();
+    const uruguayFinder = await this.uruguayrepoitory.find();
+
+    const arrayFinal = argentiFinder.concat(
+      brasilFinder,
+      chileFinder,
+      colombiaFinder,
+      paraguaiFinder,
+      peruFinder,
+      surinameFinder,
+      uruguayFinder
+    );
+    return arrayFinal;
+  };
 }
 
 export default UniversityRepository;
