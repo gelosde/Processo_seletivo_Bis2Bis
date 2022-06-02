@@ -27,8 +27,7 @@
     "dev": "ts-node-dev --transpile-only --ignore-watch  node_modules src/server.ts",
     "typeorm": "node --require ts-node/register ./node_modules/typeorm/cli.js",
     "start": "node ./build/src/server.js",
-    "build": "tsc",
-    "test": "jest --detectOpenHandles"
+    "build": "tsc"
   },
   "engines": {
     "node": "16.x"
