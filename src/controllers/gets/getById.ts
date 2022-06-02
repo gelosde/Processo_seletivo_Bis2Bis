@@ -5,7 +5,7 @@ import UniversityRepository from "../../repositories";
 const getByid = async (req: Request, res: Response) => {
   const universityId = req.params.id;
 
-  const idFound = await new UniversityRepository().getbyId(universityId);
+  const idFound = await new UniversityRepository();
 
   let code: Response<any, Record<string, any>>;
   if (idFound) {

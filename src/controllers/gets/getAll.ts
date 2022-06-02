@@ -7,17 +7,16 @@ const getAllUniversity = async (req: Request, res: Response) => {
   const pag = req.params.pagination;
   let items = [];
   let result = [];
-  if (!country) {
-    const allUniversity = await new UniversityRepository().getAll();
+  // if (!country) {
+  //   const allUniversity = await new UniversityRepository();
 
-    items = allUniversity;
-  } else {
-    const allUniversityByContry =
-      await new UniversityRepository().getAllByContry(
-        String(country).toLowerCase()
-      );
-    items = allUniversityByContry;
-  }
+  //   items = allUniversity;
+  // } else {
+  //   const allUniversityByContry =
+  //     await new UniversityRepository().
+
+  //   items = allUniversityByContry;
+  // }
 
   let totalPage = Math.ceil(items.length / 20);
 

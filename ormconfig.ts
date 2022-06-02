@@ -4,7 +4,7 @@ import path = require("path");
 dotenv.config();
 
 const dbConfig = {
-  type: "postgres",
+  type: "mongodb",
   url: process.env.DATABASE_URL,
   logging: false,
   entities: [path.join(__dirname, "./src/entities/**/*.ts")],
@@ -16,7 +16,7 @@ const dbConfig = {
 };
 
 const dbProductionConfig = {
-  type: "postgres",
+  type: "mongodb",
   url: process.env.DATABASE_URL,
   logging: false,
   entities: [path.join(__dirname, "./build/src/entities/**/*.js")],
