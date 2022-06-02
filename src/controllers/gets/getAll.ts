@@ -3,7 +3,7 @@ import { Request, Response } from "express";
 import UniversityRepository from "../../repositories";
 
 const getAllUniversity = async (req: Request, res: Response) => {
-  const country = req.query.country[0].toUpperCase();
+  const country = req.query.country;
   const pag = req.params.pagination;
   let items = [];
   let result = [];
@@ -12,28 +12,28 @@ const getAllUniversity = async (req: Request, res: Response) => {
 
     items = allUniversity;
   } else {
-    if (country === "Argentina") {
+    if (country === "argentina") {
       const argentina = await new UniversityRepository().getAllInArgentina();
       items = argentina;
-    } else if (country === "Brasil") {
+    } else if (country === "brasil") {
       const brasil = await new UniversityRepository().getAllInBrasil();
       items = brasil;
-    } else if (country === "Chile") {
+    } else if (country === "chile") {
       const chile = await new UniversityRepository().getAllInchile();
       items = chile;
-    } else if (country === "Colombia") {
+    } else if (country === "colombia") {
       const colombia = await new UniversityRepository().getAllInColombia();
       items = colombia;
-    } else if (country === "Paraguai") {
+    } else if (country === "paraguai") {
       const paraguai = await new UniversityRepository().getAllInParaguai();
       items = paraguai;
-    } else if (country === "Peru") {
+    } else if (country === "peru") {
       const peru = await new UniversityRepository().getAllInPeru();
       items = peru;
-    } else if (country === "Suriname") {
+    } else if (country === "suriname") {
       const suriname = await new UniversityRepository().getAllInSuriname();
       items = suriname;
-    } else if (country === "Uruguai") {
+    } else if (country === "uruguai") {
       const uruguay = await new UniversityRepository().getAllInUruguay();
       items = uruguay;
     } else {

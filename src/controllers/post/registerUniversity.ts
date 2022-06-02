@@ -6,52 +6,64 @@ const registerUNiversity = async (req: Request, res: Response) => {
   let university = req.validated;
   let response: any;
   let statusCode: number;
-  university.country = university.country[0].toUpperCase();
+  university.country = university.country.toLowerCase();
+
+  const getAll = await new UniversityRepository().getAll();
+
+  for (let cont = 0; cont < getAll.length; cont++) {
+    if (
+      getAll[cont].name === university.name &&
+      getAll[cont].country === university.country &&
+      getAll[cont].stateProvince === university.stateProvince
+    ) {
+      return res.status(400).json({ smg: "this university in this database" });
+    }
+  }
 
   if (
-    university.country === "Argentina" &&
+    university.country === "argentina" &&
     university.alpha_two_code === "AR"
   ) {
     response = await new UniversityRepository().saveArgentina(university);
     statusCode = 201;
   } else if (
-    university.country === "Brasil" &&
+    university.country === "brasil" &&
     university.alpha_two_code === "BR"
   ) {
     response = await new UniversityRepository().saveInBrasil(university);
     statusCode = 201;
   } else if (
-    university.country === "Chile" &&
+    university.country === "chile" &&
     university.alpha_two_code === "CL"
   ) {
     response = await new UniversityRepository().saveInchile(university);
     statusCode = 201;
   } else if (
-    university.country === "Colombia" &&
+    university.country === "colombia" &&
     university.alpha_two_code === "CO"
   ) {
     response = await new UniversityRepository().saveInColombia(university);
     statusCode = 201;
   } else if (
-    university.country === "Paraguai" &&
+    university.country === "paraguai" &&
     university.alpha_two_code === "PY"
   ) {
     response = await new UniversityRepository().saveInParaguai(university);
     statusCode = 201;
   } else if (
-    university.country === "Peru" &&
+    university.country === "peru" &&
     university.alpha_two_code === "PE"
   ) {
     response = await new UniversityRepository().saveInPeru(university);
     statusCode = 201;
   } else if (
-    university.country === "Suriname" &&
+    university.country === "suriname" &&
     university.alpha_two_code === "SR"
   ) {
     response = await new UniversityRepository().saveInSuriname(university);
     statusCode = 201;
   } else if (
-    university.country === "Uruguai" &&
+    university.country === "uruguai" &&
     university.alpha_two_code === "UY"
   ) {
     response = await new UniversityRepository().saveInUruguay(university);

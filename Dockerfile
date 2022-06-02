@@ -1,4 +1,4 @@
-FROM node:16-alpine
+FROM mysql
 
 WORKDIR /app
 

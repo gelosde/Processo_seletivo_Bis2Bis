@@ -6,7 +6,7 @@ dotenv.config();
 const dbConfig = {
   type: "mongodb",
   url: process.env.DATABASE_URL,
-  logging: false,
+  logging: true,
   entities: [path.join(__dirname, "./src/entities/**/*.ts")],
   migrations: [path.join(__dirname, "./src/migrations/**/*.ts")],
   cli: {

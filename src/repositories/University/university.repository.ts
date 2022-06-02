@@ -32,6 +32,7 @@ class UniversityRepository {
     this.uruguayrepoitory = getMongoRepository(universityList.uruguayEntity);
   }
   /* argentina */
+
   saveArgentina = async (university: IUniversityInterface) =>
     this.argentinarepository.insertOne(university);
 
@@ -49,7 +50,7 @@ class UniversityRepository {
       stateProvince: Newinfo.stateProvince,
       web_pages: Newinfo.web_pages,
     });
-  deleteInargentina = async (id: string) =>
+  deleteInArgentina = async (id: string) =>
     this.argentinarepository.delete({ id: id });
 
   /* brasil */
@@ -71,7 +72,8 @@ class UniversityRepository {
       stateProvince: Newinfo.stateProvince,
       web_pages: Newinfo.web_pages,
     });
-  delete = async (id: string) => this.brasilrepository.delete({ id: id });
+  deleteInBrasil = async (id: string) =>
+    this.brasilrepository.delete({ id: id });
 
   /*chile*/
 
@@ -80,7 +82,7 @@ class UniversityRepository {
 
   getAllInchile = async () => this.chilerepoitory.find();
 
-  update = async (
+  updateChile = async (
     oldInfo: IUniversityInterface,
     Newinfo: IUniversityInterface
   ) =>

@@ -1,1 +1,113 @@
-# Processo_seletivo_Bis2Bis
+<h1 align="center"> Processo selteivo Bis2Bis</h1>
+Banco de dados para para informações de banco de dados
+
+## rota Post /api/universities/
+
+{
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS }
+
+deve retornar
+
+{
+id: id da faculdade
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS }
+
+## rota Get /api/universities/
+
+/api/universities/id/:id
+deve retornar :
+
+{
+id: id da faculdade
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS
+}
+
+/api/universities/:pagination/?country
+
+retorna um array com as universidades
+
+[{
+id: id da faculdade
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS
+},{
+id: id da faculdade
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS
+},{
+id: id da faculdade
+alpha_two_code:"BR"
+
+web_pages:[]
+
+name: Universidade blablabla ,
+
+country: brasil,
+
+domains: [],
+
+stateProvince(opcional):RS
+}]
+
+## rota Put /api/universities/:id
+
+no corpo da requisição
+todas as atualizações são opcionais
+{
+name:blablabla ,
+web_pages:,
+domains:,
+}
+retorna a univeridade atualizado
+
+## rota DELET /api/universities/:id
+
+universidade retorna "University is deleted from database"

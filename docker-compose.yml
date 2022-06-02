@@ -2,12 +2,12 @@ version: "3.9"
 
 services:
   University:
-    image: postgres:alpine
+    image: mysql
     ports:
       - 5432:5432
     environment:
-      - POSTGRES_PASSWORD
-      - POSTGRES_DB
+      - MISQL_PASSCODE
+      - MYSQL_DB
   app:
     build: .
     ports:
