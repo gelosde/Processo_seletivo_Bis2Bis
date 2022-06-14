@@ -5,6 +5,7 @@ Banco de dados para para informações de banco de dados
 ## rota Post
 /api/universities/
 
+# No body
 {
 alpha_two_code:"BR"
 
@@ -18,7 +19,7 @@ domains: [array de strings],
 
 stateProvince(opcional):RS }
 
-deve retornar
+# deve retornar
 
 {
 id: id da faculdade
@@ -38,7 +39,7 @@ stateProvince(opcional):RS }
 
 /api/universities/id/:id
 
-deve retornar :
+# deve retornar :
 
 {
 id: id da faculdade
@@ -55,9 +56,9 @@ domains:[array de strings],
 stateProvince(opcional):RS
 }
 
-/api/universities/:pagination/?country
+# Retornar um array com ate  vinte universidades
 
-retorna um array com ate  vinte universidades
+/api/universities/:pagination/?country
 
 [{
 id: id da faculdade
@@ -110,7 +111,7 @@ name:blablabla ,
 web_pages:,
 domains:,
 }
-retorna a univeridade atualizado
+retorna a universidade atualizado
 
 ## rota DELET 
 /api/universities/:id
