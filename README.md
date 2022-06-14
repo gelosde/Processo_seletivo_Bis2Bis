@@ -2,10 +2,10 @@
 Banco de dados para para informações de banco de dados
 
 
-## rota Post
+# rota Post
 /api/universities/
 
-# No body
+## No body
 {
 alpha_two_code:"BR"
 
@@ -19,7 +19,7 @@ domains: [array de strings],
 
 stateProvince(opcional):RS }
 
-# deve retornar
+### deve retornar
 
 {
 id: id da faculdade
@@ -35,11 +35,11 @@ domains:[array de strings],
 
 stateProvince(opcional):RS }
 
-## rota Get
+# rota Get
 
 /api/universities/id/:id
 
-# deve retornar :
+### deve retornar :
 
 {
 id: id da faculdade
@@ -56,7 +56,7 @@ domains:[array de strings],
 stateProvince(opcional):RS
 }
 
-# Retornar um array com ate  vinte universidades
+### Retornar um array com ate  vinte universidades
 
 /api/universities/:pagination/?country
 
@@ -101,19 +101,18 @@ domains: [array cm elementos],
 stateProvince(opcional):RS
 }]
 
-## rota Put 
+# rota Put 
 /api/universities/:id
 
-no corpo da requisição
-todas as atualizações são opcionais
+no corpo da requisição todas as atualizações são opcionais
 {
 name:blablabla ,
-web_pages:,
-domains:,
+web_pages:[],
+domains:[],
 }
 retorna a universidade atualizado
 
-## rota DELET 
+# rota DELET 
 /api/universities/:id
 
 universidade retorna "University is deleted from database"
